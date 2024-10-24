@@ -4,14 +4,9 @@ import 'package:bloc_example/Counter/block/counter_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class CounterScreen extends StatelessWidget {
+  const CounterScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     print("Scaffold");
@@ -34,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  print("butt");
+                  print("Increment");
                   context.read<CounterBloc>().add(IncremnetCounter());
                 },
                 child: const Text("Increment"),
@@ -44,9 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
+                  print("Decrement");
                   context.read<CounterBloc>().add(DecrementCounter());
                 },
-                child: const Text("Increment"),
+                child: const Text("Decrement"),
               ),
             ],
           ),
