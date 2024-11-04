@@ -8,6 +8,7 @@ class PickerBloc extends Bloc<PickerEvent, PickerState> {
   final Picker picker;
   PickerBloc(this.picker) : super(const PickerState()) {
     on<ImageFromCamera>(imageFromCamera);
+    on<ImageFromGallery>(imageFromGallery);
   }
 
   void imageFromCamera(ImageFromCamera event, Emitter<PickerState> emit) async {
