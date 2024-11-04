@@ -11,6 +11,15 @@ class CounterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print("Scaffold");
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Counter",
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.white,
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -18,7 +27,7 @@ class CounterScreen extends StatelessWidget {
           BlocBuilder<CounterBloc, CounterState>(builder: (context, state) {
             return Text(
               state.counter.toString(),
-              style: TextStyle(fontSize: 60),
+              style: const TextStyle(fontSize: 60),
             );
           }),
           const SizedBox(
